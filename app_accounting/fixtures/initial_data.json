@@ -1,0 +1,83 @@
+[
+  {
+      "model": "app_accounting.user",
+      "pk": 1,
+      "fields": {
+          "username": "testuser",
+          "password": "pbkdf2_sha256$600000$CdVU6HYx4d0CDCh5ZS1bQT$DtHD3WeJ/C0ptaaguv83pLXlhAqdXjxaHzRaElNB3LU=",
+          "email": "testuser@example.com",
+          "avatar": "",
+          "about": "Test user about text"
+      }
+  },
+  {
+      "model": "app_accounting.education",
+      "pk": 1,
+      "fields": {
+          "start_date": "2020-01-01",
+          "end_date": "2024-01-01",
+          "academy": "Test University",
+          "degree": "Bachelors",
+          "major": "Computer Science",
+          "user": 1
+      }
+  },
+  {
+      "model": "app_accounting.experience",
+      "pk": 1,
+      "fields": {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "company": "Test Company",
+          "position": "Software Engineer",
+          "user": 1
+      }
+  },
+  {
+      "model": "app_accounting.task",
+      "pk": 1,
+      "fields": {
+          "description": "Developed a web application using Django.",
+          "experience": 1
+      }
+  },
+  {
+      "model": "app_accounting.skill",
+      "pk": 1,
+      "fields": {
+          "level": "Expert",
+          "title": "Python",
+          "user": 1,
+          "tech_stack": 1
+      }
+  },
+  {
+      "model": "app_accounting.language",
+      "pk": 1,
+      "fields": {
+          "level": "Fluent",
+          "name": "English",
+          "user": 1
+      }
+  },
+  {
+      "model": "app_accounting.course",
+      "pk": 1,
+      "fields": {
+          "academy_name": "Test Academy",
+          "title": "Django Course",
+          "description": "An advanced Django course.",
+          "user": 1
+      }
+  },
+  {
+      "model": "app_accounting.social",
+      "pk": 1,
+      "fields": {
+          "user": 1,
+          "url": "https://linkedin.com/in/testuser",
+          "image": "",
+          "name": "LinkedIn"
+      }
+  }
+]

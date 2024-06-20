@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4 main-logo" src="{% static 'resume/image/logo.jpg' %}" alt="Resume Maker Logo">
+    <h1 class="display-5 fw-bold text-body-emphasis">Resume Maker</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">{{ resume_count }} resume created until now!</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Vacancy</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Submit your resume</button>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="px-4 py-5 my-5 text-center bg-body-tertiary">
+    <div class="container">
+
+      <div class="row mb-5">
+        {% include "templates/card-list-with-title.html"  with title="Companies" objects=companies %}
+      </div>
+
+      <div class="row mb-5">
+        {% include "templates/card-list-with-title.html"  with title="Users" objects=users %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
