@@ -14,23 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
-from django.urls import path, include
+from app_resume import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('app_resume.urls')),
-    path('', include('app_accounting.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-from django.contrib import admin
-
-
-# Admin Site Config
-admin.sites.AdminSite.site_header = 'Resume Maker Admin Dashboard'
-admin.sites.AdminSite.site_title = 'Resume Maker'
-admin.sites.AdminSite.index_title = 'Resume Maker'
+    path('', views.home),
+    path('resume/<int:user_id>/', views.resume),
+]
