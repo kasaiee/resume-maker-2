@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'app_accounting',
     'app_resume',
+    'app_extension',
 ]
 
 MIDDLEWARE = [

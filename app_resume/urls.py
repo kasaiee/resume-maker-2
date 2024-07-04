@@ -21,4 +21,5 @@ from app_resume import views
 urlpatterns = [
     path('', views.home),
     path('resume/<int:user_id>/', views.resume, name='resume-detail'),
+    path('search/', views.search, name='search'),
 ]

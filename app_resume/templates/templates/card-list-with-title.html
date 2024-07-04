@@ -1,3 +1,4 @@
+{% load static %}
 <div class="row text-center">
   <div class="col-6">
     <p class="h2 text-start">{{ title }}</p>
@@ -10,11 +11,14 @@
 </div>
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1">
-  {% for object in objects %}
-  <div class="col">
-    <div class="card company-card">
-      <div>{{ object }}</div>
+    {% for object in objects %}
+    <div class="col">
+      <div class="card company-card">
+        <div>{{ object }}</div>
+      </div>
     </div>
-  </div>
-  {% endfor %}
+    {% empty %}
+      <img src="{% static 'resume/image/not-found.png' %}" style="width: 200px; height: 200px" />
+      not found
+    {% endfor %}
 </div>

@@ -7,6 +7,8 @@ class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatars/', blank=True)
     about = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.get_full_name()
 
 class Education(models.Model):
     start_date = models.DateField()
