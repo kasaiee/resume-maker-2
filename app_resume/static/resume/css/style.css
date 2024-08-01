@@ -16,78 +16,36 @@
   margin: auto
 }
 
+.form-signin {
+  max-width: 330px;
+}
 
+.form-signin input[placeholder="Username"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.circle-icon-button {
+  border-radius: 50px;
+  width: 42px;
+  height: 42px;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.cover {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-
-/* body {
-  margin: 0;
-  font-family: 'Raleway';
-  font-size: 16px;
-  line-height: 1.8em;
-}
-
-a {
-  color: #1C9C94;
-  text-decoration: none;
-} */
-
-/* a:hover {
-  opacity: 0.5;
-} */
-
-/* article {
-  padding:0 1em;
-} */
-
-/* section{
-  margin: 1em;
-  padding: 1em;
-}
-
-header, main, footer {
-  margin: 0 auto;
-} */
-
-/* header {
-  padding: 2em;
-  text-align: center;
-  background-image: url('./img/bg.jpg');
-  background-size: cover;
-  background-position: fixed;
-  color: white;
-} */
-
-/* header section {
-  margin: 0 auto;
-  max-width: 640px;
-} */
-
-/* header img {
-  border-radius: 50%;
-  max-width: 150px;
-}
-
-h1 {
-  text-transform: uppercase;
-  margin: 1em 0;
-}
-
-h3 {
-  text-transform: uppercase;
-}
-
-h3, h4 {
-  font-weight: bold;
-}
-
-main {
-  max-width: 1140px;
-} */
-
-/* main section:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-} */
 
 .fab {
   border: 1px solid white;
@@ -129,7 +87,7 @@ a .fab {
 }
 
 .skills .column {
-  -ms-flex: 0 0 50%%;
+  -ms-flex: 0 0 50%;
   flex: 0 0 50%;
   max-width: 50%;
 }

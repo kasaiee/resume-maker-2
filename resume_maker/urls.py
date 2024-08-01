@@ -16,18 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_resume import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
-    path('resume/<int:user_id>/', views.resume),
+    path('', include('app_resume.urls')),
+    path('', include('app_accounting.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-from django.contrib import admin
-
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Admin Site Config
 admin.sites.AdminSite.site_header = 'Resume Maker Admin Dashboard'
