@@ -17,9 +17,12 @@ Including another URLconf
 from django.urls import path
 from django.urls import path, include
 from .views import SignUpView
+from .api import views as api_views
 
 
 urlpatterns = [
+    path("api/user/list/", api_views.UserList.as_view()),
+    path("api/user/<int:user_id>/", api_views.UserDetail.as_view()),
     path("accounts/signup/", SignUpView.as_view(), name="signup"),
     path("accounts/", include("django.contrib.auth.urls")),
 ]

@@ -35,7 +35,7 @@ class Command(BaseCommand):
         PASSWORD = 'asdf@1234'
         fake = Faker()
         admin = User.objects.create_superuser('admin', '', PASSWORD)
-        for i in tqdm(range(1, 6), desc="Creating users"):
+        for i in tqdm(range(1, 61), desc="Creating users"):
             user = User.objects.create_user(
                 username=f'user{i}', 
                 password=PASSWORD, 

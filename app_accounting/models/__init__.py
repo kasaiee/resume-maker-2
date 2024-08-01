@@ -1,11 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
+from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import UserManager
 from .choices import DEGREE_CHOICES, LEVEL_CHOICES, MAJOR_CHOICES
 from .scripts import POSITION_HELP_TEXT
+from .managers import ResumeMakerManager
 
 class User(AbstractUser):
+    first_name = models.CharField(_("first name"), max_length=150)
+    last_name = models.CharField(_("last name"), max_length=150)
+    email = models.EmailField(_("email address"))
     avatar = models.ImageField(upload_to='avatars/', blank=True)
     about = models.TextField(blank=True)
+
+    objects = UserManager()
+    resume_makers = ResumeMakerManager()
 
     def __str__(self):
         return self.get_full_name()
@@ -61,6 +70,4 @@ class Course(models.Model):
 
 class Social(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='socials')
-    url = models.URLField()
-    image = models.ImageField(upload_to='social_images/', blank=True)
-    name = models.CharField(max_length=255)
+    url = models.URLField(blank=True)
